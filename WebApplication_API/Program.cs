@@ -13,6 +13,8 @@ if (app.Environment.IsDevelopment())
     //app.UseExceptionHandler();
 }
 
+//prova push
+
 app.RegisterEP();
 
 app.Run();
