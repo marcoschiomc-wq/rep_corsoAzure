@@ -1,0 +1,11 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using WebApplication_API;
+global using WebApplication_API.Data;
+global using WebApplication_API.DTO;
+global using WebApplication_API.TodoItems;
+global using WebApplication_API.ExtensionServices;
+global using WebApplication_API.Endpoints;
+global using WebApplication_API.Middlewares;
+global using Microsoft.AspNetCore.Http.HttpResults;
+global using Microsoft.AspNetCore.Mvc;
+global using System.ComponentModel.DataAnnotations;
