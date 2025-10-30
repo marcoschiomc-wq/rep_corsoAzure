@@ -1,15 +1,30 @@
-﻿namespace WebApplication_API.TodoItems;
+﻿using Microsoft.Extensions.Options;
+using WebApplication_API.Configuration;
+
+namespace WebApplication_API.TodoItems;
 
 class MockItems : ITodoItems
 {
-
+    private readonly IConfiguration _configuration;
+    private readonly IOptions<AppSettings> _appSettings;
     private static List<TodoItem> todoItems = new List<TodoItem>() {
     new TodoItem(1,"1",false,"Sport"),
     new TodoItem(2,"2",true,"Cronaca"),
     new TodoItem(3,"3",true,"Altro"),
 };
+    public MockItems(IConfiguration _configuration, IOptions<AppSettings> appSettings)
+    {
+        this._configuration = _configuration;
+        this._appSettings = appSettings;
+    }
     public async Task<List<TodoItem>> GetAllItems()
     {
+        var mioValore = _configuration["MyKey"];
+        var mioValoreA = _configuration["MyJson:A"];
+        var mioValoreB = _configuration["MyJson:B"];
+        var A = _appSettings.Value.A;
+
+
         await Task.Delay(1000);
         return todoItems;
     }
